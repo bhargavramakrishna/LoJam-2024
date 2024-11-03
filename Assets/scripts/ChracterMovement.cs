@@ -50,15 +50,21 @@ public class ChracterMovement : MonoBehaviour
     {
         if (Mathf.Abs(horizontal) > 0.01f)
         {
-            transform.position += new Vector3(horizontal * moveSpeed * Time.deltaTime, 0, 0);
+            Rigidbody.linearVelocity = new Vector2(horizontal * moveSpeed, Rigidbody.linearVelocity.y);
+
             if (currentState != PlayerState.Jumping)
             {
                 currentState = PlayerState.Moving;
             }
         }
-        else if (currentState == PlayerState.Moving)
+        else
         {
-            currentState = PlayerState.Idle;
+            Rigidbody.linearVelocity = new Vector2(0, Rigidbody.linearVelocity.y);
+
+            if (currentState != PlayerState.Jumping)
+            {
+                currentState = PlayerState.Idle;
+            }
         }
     }
 
