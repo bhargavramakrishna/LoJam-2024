@@ -223,8 +223,8 @@ GameObject:
   - component: {fileID: 1809320340}
   - component: {fileID: 1809320342}
   m_Layer: 0
-  m_Name: Square
-  m_TagString: Untagged
+  m_Name: Ground
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -359,8 +359,8 @@ GameObject:
   - component: {fileID: 2059531143}
   - component: {fileID: 2059531144}
   m_Layer: 0
-  m_Name: Circle
-  m_TagString: Untagged
+  m_Name: Player
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -447,10 +447,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aedf213b71b333c49a2694fb08ab9011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rigidbody: {fileID: 0}
-  moveSpeed: 20
-  horizontal: 0
-  vertical: 0
+  moveSpeed: 5
+  jumpForce: 7
 --- !u!50 &2059531143
 Rigidbody2D:
   serializedVersion: 5
@@ -466,7 +464,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
