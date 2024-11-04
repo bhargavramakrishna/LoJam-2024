@@ -25,6 +25,7 @@ public class ChracterMovement : MonoBehaviour
     void Start()
     {
         Rigidbody = GetComponent<Rigidbody2D>();
+ 
     }
 
     // Update is called once per frame
@@ -87,4 +88,6 @@ public class ChracterMovement : MonoBehaviour
             }
         }
     }
+
+   
 }
