@@ -5,9 +5,9 @@ using UnityEngine;
 
 enum PlayerState
 {
-    Idle,
-    Moving,
-    Jumping
+    Idle = 0,
+    Moving = 1,
+    Jumping = 2
 }
 
 public class ChracterMovement : MonoBehaviour
