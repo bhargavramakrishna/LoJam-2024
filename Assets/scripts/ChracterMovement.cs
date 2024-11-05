@@ -13,13 +13,18 @@ enum PlayerState
 public class ChracterMovement : MonoBehaviour
 {
 
-    public float moveSpeed = 5f;
-    public float jumpForce = 20f;
+    [SerializeField] float moveSpeed = 5f;
+    [SerializeField] float jumpForce = 20f;
+    [SerializeField] Vector2 groundCheckBoxSize;
+    [SerializeField] Transform groundCheck;
+    [SerializeField] LayerMask groundLayer;
+
 
     private Rigidbody2D Rigidbody;
     private float horizontal;
     private float vertical;
     private PlayerState currentState = PlayerState.Idle;
+    private bool canJump = false;
 
     // Start is called before the first frame update
     void Start()
@@ -30,8 +35,9 @@ public class ChracterMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {        
         horizontal = Input.GetAxisRaw("Horizontal");
+        GroundCheck();
         HandleJump();
     }
 
@@ -45,6 +51,9 @@ public class ChracterMovement : MonoBehaviour
                 HandleMovement();
                 break;
         }
+
+
+        
     }
 
     private void HandleMovement()
@@ -71,23 +80,35 @@ public class ChracterMovement : MonoBehaviour
 
     private void HandleJump()
     {
-        if (Input.GetKeyDown(KeyCode.W) && currentState != PlayerState.Jumping)
+        if (Input.GetKeyDown(KeyCode.W) && canJump)
         {   
             currentState = PlayerState.Jumping;
             Rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
+    // private void OnCollisionEnter2D(Collision2D collision)
+    // {
+    //     if (collision.gameObject.CompareTag("Ground"))
+    //     {
+
+    //     }
+    // }
+
+    private void GroundCheck(){
+        Collider2D col = Physics2D.OverlapBox(groundCheck.position, groundCheckBoxSize, 0, groundLayer);
+        if(col != null) 
         {
             if (currentState == PlayerState.Jumping)
             {
                 currentState = PlayerState.Idle;
             }
+            canJump = true;
+        }
+        else
+        {
+            canJump = false;
         }
     }
-
    
 }
