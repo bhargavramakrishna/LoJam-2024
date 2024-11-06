@@ -18,6 +18,7 @@ public class ChracterMovement : MonoBehaviour
     [SerializeField] Vector2 groundCheckBoxSize;
     [SerializeField] Transform groundCheck;
     [SerializeField] LayerMask groundLayer;
+    [SerializeField] Transform playerSprite;
 
 
     private Rigidbody2D Rigidbody;
@@ -51,9 +52,6 @@ public class ChracterMovement : MonoBehaviour
                 HandleMovement();
                 break;
         }
-
-
-        
     }
 
     private void HandleMovement()
@@ -61,6 +59,7 @@ public class ChracterMovement : MonoBehaviour
         if (Mathf.Abs(horizontal) > 0.01f)
         {
             Rigidbody.linearVelocity = new Vector2(horizontal * moveSpeed, Rigidbody.linearVelocity.y);
+            playerSprite.localScale = new(Rigidbody.linearVelocityX > 0 ? 1 : -1, 1, 1);
 
             if (currentState != PlayerState.Jumping)
             {
