@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -56,16 +57,16 @@ public class ChracterMovement : MonoBehaviour
     }
 
     private void HandleMovement()
-    {
+    {        
+        animator.SetFloat("Speed", Mathf.Abs(horizontal));
         if (Mathf.Abs(horizontal) > 0.01f)
         {
             Rigidbody.linearVelocity = new Vector2(horizontal * moveSpeed, Rigidbody.linearVelocity.y);
             playerSprite.localScale = new(Rigidbody.linearVelocityX > 0 ? 1 : -1, 1, 1);
-
+            
             if (currentState != PlayerState.Jumping)
             {
                 currentState = PlayerState.Moving;
-                animator.SetBool("isRunning", true);
             }
         }
         else
@@ -75,7 +76,6 @@ public class ChracterMovement : MonoBehaviour
             if (currentState != PlayerState.Jumping)
             {
                 currentState = PlayerState.Idle;
-                animator.SetBool("isRunning", false);
             }
         }
     }
