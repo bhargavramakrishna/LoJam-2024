@@ -19,6 +19,7 @@ public class ChracterMovement : MonoBehaviour
     [SerializeField] Transform groundCheck;
     [SerializeField] LayerMask groundLayer;
     [SerializeField] Transform playerSprite;
+    [SerializeField] Animator animator;
 
 
     private Rigidbody2D Rigidbody;
@@ -64,6 +65,7 @@ public class ChracterMovement : MonoBehaviour
             if (currentState != PlayerState.Jumping)
             {
                 currentState = PlayerState.Moving;
+                animator.SetBool("isRunning", true);
             }
         }
         else
@@ -73,6 +75,7 @@ public class ChracterMovement : MonoBehaviour
             if (currentState != PlayerState.Jumping)
             {
                 currentState = PlayerState.Idle;
+                animator.SetBool("isRunning", false);
             }
         }
     }

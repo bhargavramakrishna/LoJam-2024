@@ -7544,6 +7544,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   playerSprite: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!212 &1451951470
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8172,6 +8173,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   playerSprite: {fileID: 1294471905}
+  animator: {fileID: 1294471906}
 --- !u!50 &2059531143
 Rigidbody2D:
   serializedVersion: 5
