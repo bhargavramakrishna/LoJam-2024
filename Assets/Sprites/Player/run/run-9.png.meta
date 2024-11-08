@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 91c964d07d2c9465abedf347a7021acf
+guid: c2a4b9a3d8e444553b460ee296dd8c23
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5639849800739361621
-    second: run-3_0
-  - first:
-      213: 5830257525739306476
-    second: run-3_1
+      213: 2092921086622007017
+    second: run-9_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -129,45 +126,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: run-3_0
+      name: run-9_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 40
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 3
+        y: 26
+        width: 65
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bac6f58cc7a3bb1b0800000000000000
-      internalID: -5639849800739361621
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: run-3_1
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 18
-        width: 56
-        height: 102
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ced3db2645c39e050800000000000000
-      internalID: 5830257525739306476
+      spriteID: 9ee7707b3ac8b0d10800000000000000
+      internalID: 2092921086622007017
       vertices: []
       indices: 
       edges: []
@@ -176,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -186,8 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      run-3_0: -5639849800739361621
-      run-3_1: 5830257525739306476
+      run-9_0: 2092921086622007017
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

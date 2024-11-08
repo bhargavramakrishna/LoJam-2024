@@ -16,6 +16,7 @@ public class ChracterMovement : MonoBehaviour
 
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] float jumpForce = 20f;
+    [SerializeField] float jumpBuffer = 0.02f;
     [SerializeField] Vector2 groundCheckBoxSize;
     [SerializeField] Transform groundCheck;
     [SerializeField] LayerMask groundLayer;
@@ -27,7 +28,8 @@ public class ChracterMovement : MonoBehaviour
     private float horizontal;
     private float vertical;
     private PlayerState currentState = PlayerState.Idle;
-    private bool canJump = false;
+    private float jumpTimer = 0;
+    private bool canJump;
 
     // Start is called before the first frame update
     void Start()
@@ -40,8 +42,11 @@ public class ChracterMovement : MonoBehaviour
     void Update()
     {        
         horizontal = Input.GetAxisRaw("Horizontal");
+        vertical = Input.GetAxisRaw("Vertical");
+        UpdateBuffers();
         GroundCheck();
         HandleJump();
+        animator.SetInteger("State", (int)currentState);
     }
 
     private void FixedUpdate()
@@ -57,8 +62,14 @@ public class ChracterMovement : MonoBehaviour
     }
 
     private void HandleMovement()
-    {        
-        animator.SetFloat("Speed", Mathf.Abs(horizontal));
+    {
+        if (jumpTimer > 0 && canJump) {
+            currentState = PlayerState.Jumping;
+            Rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            jumpTimer = 0;
+            canJump = false;
+        }
+
         if (Mathf.Abs(horizontal) > 0.01f)
         {
             Rigidbody.linearVelocity = new Vector2(horizontal * moveSpeed, Rigidbody.linearVelocity.y);
@@ -82,22 +93,13 @@ public class ChracterMovement : MonoBehaviour
 
     private void HandleJump()
     {
-        if (Input.GetKeyDown(KeyCode.W) && canJump)
+        if (Input.GetKeyDown(KeyCode.W))
         {   
-            currentState = PlayerState.Jumping;
-            Rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            jumpTimer = jumpBuffer;
         }
     }
 
-    // private void OnCollisionEnter2D(Collision2D collision)
-    // {
-    //     if (collision.gameObject.CompareTag("Ground"))
-    //     {
-
-    //     }
-    // }
-
-    private void GroundCheck(){
+    private void GroundCheck() {
         Collider2D col = Physics2D.OverlapBox(groundCheck.position, groundCheckBoxSize, 0, groundLayer);
         if(col != null) 
         {
@@ -105,12 +107,13 @@ public class ChracterMovement : MonoBehaviour
             {
                 currentState = PlayerState.Idle;
             }
+
             canJump = true;
         }
-        else
-        {
-            canJump = false;
-        }
+    }
+
+    private void UpdateBuffers(){
+        jumpTimer -= Time.deltaTime;
     }
    
 }
