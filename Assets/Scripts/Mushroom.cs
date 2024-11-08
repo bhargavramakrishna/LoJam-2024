@@ -2,28 +2,40 @@ using UnityEngine;
 
 public class Mushroom : MonoBehaviour
 {
+    [SerializeField] float growthInterval = 0.3f;
+    [SerializeField] float maxGrowth = 3f;
+    [SerializeField] GameObject largeMushroom;
+    [SerializeField] Transform smallMushroom;
     private float growthRate = 0.1f;
     private float mushroomGrowth = 1f;
+    private float growthTimer;
     // max growth is 2f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        growthTimer = Time.time;
+        largeMushroom.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void OnParticleCollision(GameObject other){
+        if(other.CompareTag("WaterParticles")){
+            if(Time.time > growthTimer) {
+                growthTimer = Time.time + growthInterval;
+                Grow();
+            }
+        }
     }
 
     public void Grow()
     {
-        if (mushroomGrowth < 1f)
+        if (mushroomGrowth < maxGrowth)
         {
             mushroomGrowth += growthRate;
-            transform.localScale = new Vector3(mushroomGrowth, mushroomGrowth, 1f);
+            smallMushroom.localScale = new Vector3(mushroomGrowth, mushroomGrowth, 1f);
+        } else {
+            largeMushroom.SetActive(true);
+            smallMushroom.gameObject.SetActive(false);
         }
     }
 }

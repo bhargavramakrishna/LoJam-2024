@@ -3,6 +3,7 @@ using UnityEngine;
 public class WaterCharacter : MonoBehaviour
 {
     [SerializeField] Animator animator;
+    [SerializeField] WaterSprayController waterSpray;
 
     private PlayerState currentState = PlayerState.Idle;
 
@@ -14,7 +15,7 @@ public class WaterCharacter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKey(KeyCode.W))
         {
             currentState = PlayerState.Watering;
         }
@@ -28,16 +29,21 @@ public class WaterCharacter : MonoBehaviour
 
     void FixedUpdate()
     {
-        switch (currentState)
-        {
-            case PlayerState.Watering:
-                HandleWatering();
-                break;
-        }
+        HandleWatering();
     }
 
     private void HandleWatering()
     {
-        // Water the plant
+        if(currentState == PlayerState.Watering) {
+            waterSpray.StartWatering();
+            waterSpray.transform.position = transform.position;
+        } else {
+            waterSpray.StopWatering();
+        }
+    }
+
+    public void OnCharacterSwitch(){
+        currentState = PlayerState.Idle;
+        HandleWatering();
     }
 }

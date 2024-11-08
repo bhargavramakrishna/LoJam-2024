@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: bdefb11d8e74f4347af33cb332cd5502
+guid: ab4a5a83db0903d4d99d82b13b04166e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4115066244455725585
-    second: tinyShroom_red_0
+      213: -6231044458718751821
+    second: circle_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 70
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -126,23 +126,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tinyShroom_red_0
+      name: circle_0
       rect:
         serializedVersion: 2
-        x: 13
+        x: 0
         y: 0
-        width: 41
-        height: 31
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 11afbff52f6ab1930800000000000000
-      internalID: 4115066244455725585
+      spriteID: 3b3176a0412e689a0800000000000000
+      internalID: -6231044458718751821
       vertices: []
       indices: 
       edges: []
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 84964fe48d1fce941a5a369975c7f34f
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      tinyShroom_red_0: 4115066244455725585
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

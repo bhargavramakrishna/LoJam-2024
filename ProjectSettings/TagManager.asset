@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - LevelZone
+  - WaterParticles
   layers:
   - Default
   - TransparentFX

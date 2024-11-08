@@ -12,7 +12,13 @@ public class CameraManager : MonoBehaviour
             instance = this;
         }
     }
-    public void UpdateCameraTarget(Vector3 newPos){
+    public void UpdateCameraTarget(Vector3 newPos) {
+        cameraTarget.SetParent(null);
         cameraTarget.position = newPos;
+    }
+
+    public void UpdateCameraFollowTarget(Transform target) {
+        cameraTarget.SetParent(target);
+        cameraTarget.localPosition = Vector3.zero;
     }
 }

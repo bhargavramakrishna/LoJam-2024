@@ -29,4 +29,8 @@ public class LevelZone : MonoBehaviour
     public int GetNumOrbs(){
         return orbs.Count;
     }
+
+    public Vector3 GetCameraCenter(){
+        return cameraCenter.position;
+    }
 }

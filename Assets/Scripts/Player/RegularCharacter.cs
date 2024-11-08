@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class RegularCharacter : MonoBehaviour
 {
-
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] float jumpForce = 20f;
     [SerializeField] float jumpBuffer = 0.02f;
