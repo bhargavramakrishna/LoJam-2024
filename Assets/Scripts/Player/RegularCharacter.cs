@@ -4,14 +4,7 @@ using System.Runtime.InteropServices;
 using Unity.VisualScripting;
 using UnityEngine;
 
-enum PlayerState
-{
-    Idle = 0,
-    Moving = 1,
-    Jumping = 2
-}
-
-public class ChracterMovement : MonoBehaviour
+public class RegularCharacter : MonoBehaviour
 {
 
     [SerializeField] float moveSpeed = 5f;
