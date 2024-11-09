@@ -6,10 +6,7 @@ public class LevelZone : MonoBehaviour
 {
     [SerializeField] Transform cameraCenter;
     [SerializeField] List<MemoryOrb> orbs;
-
-    void Start(){
-
-    }
+    [SerializeField] Transform respawnPoint;
 
     void OnTriggerEnter2D(Collider2D col){
         if(col.CompareTag("Player")){
@@ -32,5 +29,9 @@ public class LevelZone : MonoBehaviour
 
     public Vector3 GetCameraCenter(){
         return cameraCenter.position;
+    }
+
+    public Vector3 GetRespawnPoint(){
+        return respawnPoint.position;
     }
 }

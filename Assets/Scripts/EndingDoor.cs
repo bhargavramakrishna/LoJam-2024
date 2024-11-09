@@ -1,15 +1,14 @@
-using Unity.VisualScripting;
+using System;
 using UnityEngine;
 
 public class EndingDoor : MonoBehaviour
-{
+{   
+    public event Action EndGame = delegate{};
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Player"))
         {
-            Debug.Log("Player has reached the end of the level");
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
+            EndGame();
         }
     }
 }

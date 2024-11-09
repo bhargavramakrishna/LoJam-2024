@@ -1,15 +1,21 @@
-using UnityEditor.SearchService;
+using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class DeathZone : MonoBehaviour
 {
+    [SerializeField] LevelZone levelZone;
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Player"))
         {
-            col.gameObject.SetActive(false);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            StartCoroutine(Respawn(col.attachedRigidbody.transform));
         }
+    }
+
+    IEnumerator Respawn(Transform player){
+        CameraManager.instance.Pause();
+        yield return new WaitForSeconds(1f);
+        player.position = levelZone.GetRespawnPoint();
+        CameraManager.instance.Resume();
     }
 }

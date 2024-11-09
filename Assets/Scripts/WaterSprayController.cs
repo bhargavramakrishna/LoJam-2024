@@ -19,6 +19,7 @@ public class WaterSprayController : MonoBehaviour
     public void StartWatering(){
         waterPS.Play();
         isWatering = true;
+        transform.position = player.position;
     }
 
     public void StopWatering(){

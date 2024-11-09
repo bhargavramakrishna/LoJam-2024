@@ -11,6 +11,7 @@ public class Mushroom : MonoBehaviour
     private float growthRate = 0.1f;
     private float mushroomGrowth = 1f;
     private float growthTimer;
+    bool isGrown;
     // max growth is 2f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -36,11 +37,16 @@ public class Mushroom : MonoBehaviour
             mushroomGrowth += growthRate;
             smallMushroom.localScale = new Vector3(mushroomGrowth, mushroomGrowth, 1f);
         } else {
-            largeMushroom.SetActive(true);
-            smallMushroom.gameObject.SetActive(false);
+            if(!isGrown){
+                isGrown = true;
+                largeMushroom.SetActive(true);
+                smallMushroom.gameObject.SetActive(false);
 
-            if (memoryOrb != null)
-                memoryOrb.SetActive(true);
+                if (memoryOrb != null) memoryOrb.SetActive(true);
+
+                AudioManager.instance.PlayMushroomGrow();
+            }
+
         }
     }
 }

@@ -36,9 +36,10 @@ public class WaterCharacter : MonoBehaviour
     {
         if(currentState == PlayerState.Watering) {
             waterSpray.StartWatering();
-            waterSpray.transform.position = transform.position;
+            AudioManager.instance.ToggleWateringSound(true);
         } else {
             waterSpray.StopWatering();
+            AudioManager.instance.ToggleWateringSound(false);
         }
     }
 

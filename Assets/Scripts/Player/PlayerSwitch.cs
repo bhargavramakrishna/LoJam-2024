@@ -29,6 +29,7 @@ public class PlayerSwitch : MonoBehaviour
                 Character1.SetActive(false);
                 characterOn = false;
                 StartCoroutine(DistortionBlendIn());
+                AudioManager.instance.ToggleWaterBGM(true);
             }
             else
             {
@@ -38,6 +39,7 @@ public class PlayerSwitch : MonoBehaviour
                 characterOn = true;
                 StartCoroutine(DistortionBlendOut());
                 Character2.GetComponent<WaterCharacter>().OnCharacterSwitch();
+                AudioManager.instance.ToggleWaterBGM(false);
             }
         }
     }

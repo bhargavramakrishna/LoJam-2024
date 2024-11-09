@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 02463819353c64ca2ac66fcbec7db086
+guid: dc6e731a191f52740b8d49984bd828ef
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8844852810867864485
-    second: MemoryOrb5_0
+      213: 4406374106061590719
+    second: lojam icon_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -122,17 +122,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MemoryOrb5_0
+      name: lojam icon_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 255
-        height: 255
+        x: 8
+        y: 6
+        width: 51
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b5c0b950b35c04580800000000000000
-      internalID: -8844852810867864485
+      spriteID: fb0d74b47e5962d30800000000000000
+      internalID: 4406374106061590719
       vertices: []
       indices: 
       edges: []
@@ -161,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      MemoryOrb5_0: -8844852810867864485
+      lojam icon_0: 4406374106061590719
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

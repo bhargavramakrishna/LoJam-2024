@@ -60,6 +60,7 @@ public class RegularCharacter : MonoBehaviour
             Rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             jumpTimer = 0;
             canJump = false;
+            AudioManager.instance.PlayJump();
         }
 
         if (Mathf.Abs(horizontal) > 0.01f)
@@ -98,6 +99,7 @@ public class RegularCharacter : MonoBehaviour
             if (currentState == PlayerState.Jumping)
             {
                 currentState = PlayerState.Idle;
+                AudioManager.instance.PlayFootstep();
             }
 
             canJump = true;
