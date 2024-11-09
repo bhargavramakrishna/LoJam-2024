@@ -12,6 +12,7 @@ public class GameMenuManager : MonoBehaviour
     [SerializeField] GameObject quitButton;
     [SerializeField] GameObject restartButton;
     [SerializeField] EndingDoor endTrigger;
+    bool isGameEnded = false;
 
     void Start(){
         quitButton.SetActive(false);
@@ -21,8 +22,11 @@ public class GameMenuManager : MonoBehaviour
     }
 
     void EndGame(){
-        gameEndOverlay.SetActive(true);
-        StartCoroutine(GameEnd());
+        if(!isGameEnded){
+            isGameEnded = true;
+            gameEndOverlay.SetActive(true);
+            StartCoroutine(GameEnd());
+        }
     }
 
     IEnumerator GameEnd(){

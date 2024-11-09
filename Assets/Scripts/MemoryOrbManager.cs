@@ -14,13 +14,17 @@ public class MemoryOrbManager : MonoBehaviour
     int totalOrbs = 0;
     int numOrbsCollected = 0;
 
-    void Start()
-    {
+    void Awake(){
         if(instance != null){
             Destroy(this);
         } else {
             instance = this;
         }
+    }
+
+    void Start()
+    {
+
         foreach(LevelZone levelZone in levelZones){
             totalOrbs += levelZone.GetNumOrbs();
         }

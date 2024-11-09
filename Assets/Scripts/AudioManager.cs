@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource mushroomGrow;
     public static AudioManager instance;
 
-    void Start(){
+    void Awake(){
         if(instance != null) {
             Destroy(this);
         } else {

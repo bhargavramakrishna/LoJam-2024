@@ -8,13 +8,14 @@ public class CameraManager : MonoBehaviour
     Vector3 storedPos;
     Transform storedParent;
 
-    void Start(){
+    void Awake(){
         if(instance != null){
             Destroy(this);
         } else {
             instance = this;
         }
     }
+    
     public void UpdateCameraTarget(Vector3 newPos) {
         if(isFollowing) {
             storedPos = newPos;
