@@ -16,6 +16,7 @@ public class MemoryOrb : MonoBehaviour
             OnOrbPickup?.Invoke(indexInLevel);
             isPickedUp = true;
             gameObject.SetActive(false);
+            Debug.Log("Orb picked up");
         }
     }
 

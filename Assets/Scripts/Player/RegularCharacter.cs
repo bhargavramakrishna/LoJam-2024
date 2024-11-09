@@ -65,7 +65,7 @@ public class RegularCharacter : MonoBehaviour
         if (Mathf.Abs(horizontal) > 0.01f)
         {
             Rigidbody.linearVelocity = new Vector2(horizontal * moveSpeed, Rigidbody.linearVelocity.y);
-            playerSprite.localScale = new(Rigidbody.linearVelocityX > 0 ? 1 : -1, 1, 1);
+            playerSprite.localScale = new(Rigidbody.linearVelocityX > 0 ? 2 : -2, 2, 1);
             
             if (currentState != PlayerState.Jumping)
             {

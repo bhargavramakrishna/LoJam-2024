@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 788640114705712537}
   - component: {fileID: 8192242435628997094}
   - component: {fileID: 5042263630297151909}
+  - component: {fileID: 3813022621139511215}
   m_Layer: 0
   m_Name: MemoryOrb
   m_TagString: Untagged
@@ -138,3 +139,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   indexInLevel: 0
+--- !u!95 &3813022621139511215
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5918522720350337813}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 285a2cb9c0e224fe9ac7f8735ce78b9a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

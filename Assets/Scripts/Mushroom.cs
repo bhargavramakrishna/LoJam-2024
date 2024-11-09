@@ -6,6 +6,8 @@ public class Mushroom : MonoBehaviour
     [SerializeField] float maxGrowth = 3f;
     [SerializeField] GameObject largeMushroom;
     [SerializeField] Transform smallMushroom;
+    [SerializeField] GameObject memoryOrb;
+
     private float growthRate = 0.1f;
     private float mushroomGrowth = 1f;
     private float growthTimer;
@@ -36,6 +38,9 @@ public class Mushroom : MonoBehaviour
         } else {
             largeMushroom.SetActive(true);
             smallMushroom.gameObject.SetActive(false);
+
+            if (memoryOrb != null)
+                memoryOrb.SetActive(true);
         }
     }
 }
